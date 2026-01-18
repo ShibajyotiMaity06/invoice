@@ -10,7 +10,7 @@ const config = require('../config/env');
 const cookieOptions = {
   httpOnly: true,
   secure: config.NODE_ENV === 'production',
-  sameSite: config.NODE_ENV === 'production' ? 'strict' : 'lax',
+  sameSite: config.NODE_ENV === 'production' ? 'none' : 'lax',
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 };
 
@@ -98,7 +98,7 @@ const login = asyncHandler(async (req, res) => {
 // @access  Private
 const logout = asyncHandler(async (req, res) => {
   res.cookie('token', '', {
-    httpOnly: true,
+    ...cookieOptions,
     expires: new Date(0),
   });
 
