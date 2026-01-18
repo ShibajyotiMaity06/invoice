@@ -10,6 +10,7 @@ const errorHandler = require('./middleware/errorHandler');
 const authRoutes = require('./routes/authRoutes');
 const businessProfileRoutes = require('./routes/businessProfileRoutes');
 const clientRoutes = require('./routes/clientRoutes');
+const invoiceRoutes = require('./routes/invoiceRoutes');
 
 const app = express();
 
@@ -45,6 +46,7 @@ app.get('/health', (req, res) => {
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/business-profile', businessProfileRoutes);
 app.use('/api/v1/clients', clientRoutes);
+app.use('/api/v1/invoices', invoiceRoutes);
 
 // 404 handler
 app.use((req, res) => {
