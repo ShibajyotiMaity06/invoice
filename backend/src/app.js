@@ -16,11 +16,17 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
-
+const allowedOrigins = config.FRONTEND_URL.split(",");
 // CORS
 app.use(
   cors({
-    origin: config.FRONTEND_URL,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin); // return ONE origin
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
