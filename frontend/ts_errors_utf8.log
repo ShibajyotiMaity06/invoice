@@ -1,0 +1,7 @@
+﻿src/components/invoices/LineItemsTable.tsx(73,22): error TS7053: Element implicitly has an 'any' type because expression of type 'number' can't be used to index type 'FieldError | Merge<FieldError, FieldErrorsImpl<any>>'.
+  No index signature with a parameter of type 'number' was found on type 'FieldError | Merge<FieldError, FieldErrorsImpl<any>>'.
+src/components/invoices/LineItemsTable.tsx(75,26): error TS7053: Element implicitly has an 'any' type because expression of type 'number' can't be used to index type 'FieldError | Merge<FieldError, FieldErrorsImpl<any>>'.
+  No index signature with a parameter of type 'number' was found on type 'FieldError | Merge<FieldError, FieldErrorsImpl<any>>'.
+src/components/invoices/LineItemsTable.tsx(139,49): error TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>>' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key

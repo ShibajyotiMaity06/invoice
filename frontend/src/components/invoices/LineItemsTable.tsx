@@ -70,9 +70,9 @@ export function LineItemsTable({
                       {...register(`lineItems.${index}.description`)}
                       className="border-0 shadow-none focus-visible:ring-0"
                     />
-                    {errors.lineItems?.[index]?.description && (
+                    {(errors.lineItems as any)?.[index]?.description && (
                       <p className="text-xs text-destructive mt-1">
-                        {errors.lineItems[index].description?.message}
+                        {(errors.lineItems as any)[index].description?.message}
                       </p>
                     )}
                   </TableCell>
@@ -135,8 +135,8 @@ export function LineItemsTable({
         Add Line Item
       </Button>
 
-      {errors.lineItems?.message && (
-        <p className="text-sm text-destructive">{errors.lineItems.message}</p>
+      {(errors.lineItems as any)?.message && (
+        <p className="text-sm text-destructive">{(errors.lineItems as any).message}</p>
       )}
     </div>
   );
